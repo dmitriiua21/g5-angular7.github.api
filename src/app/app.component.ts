@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'g5-angular-github-api';
+
+  constructor() {
+    console.log("2")
+  }
+
 }
