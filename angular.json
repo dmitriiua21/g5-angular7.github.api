@@ -133,5 +133,10 @@
       }
     }
   },
-  "defaultProject": "g5-angular-github-api"
+  "defaultProject": "g5-angular-github-api",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

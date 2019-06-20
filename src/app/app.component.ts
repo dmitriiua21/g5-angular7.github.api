@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 
+import { UserService } from './core/services/user.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'g5-angular-github-api';
 
-  constructor() {
-    console.log("2")
+  constructor(
+    private readonly userService: UserService
+  ) { }
+
+  ngOnInit() {
+    this.userService.load();
   }
 
 }
