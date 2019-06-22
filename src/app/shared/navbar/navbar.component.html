@@ -5,12 +5,12 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Block</a>
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/" >Block</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Table</a>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/table" >Table</a>
       </li>
     </ul>
     <form class="form-inline" (submit)="onSearch(form)" #form="ngForm">

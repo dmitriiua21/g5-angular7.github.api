@@ -4,19 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
+import { HomeModule } from './pages/home/home.module';
+// import { HomeComponent } from './pages/home/home.component';
+// import { TableComponent } from './pages/table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    
+    // HomeComponent,
+    // TableComponent
   ],
   imports: [
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
