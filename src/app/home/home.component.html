@@ -1,13 +1,12 @@
 <!-- Page Content -->
 <div class="container">
   <div class="row">
-    <div class="card-group" *ngIf="(users$ | async) as users">
+    <div class="card-group col-12" *ngIf="(users$ | async) as users">
       <div *ngFor="let user of users" class="col-sm-4 my-sm-3">
         <app-card
           [user]="user"
         ></app-card>
       </div>
-      
     </div>
   </div>
 </div>

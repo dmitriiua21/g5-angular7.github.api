@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+import { UserService } from './../../core/services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,13 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  model: any;
+
+  constructor(
+    private readonly userService: UserService
+  ) { }
 
   ngOnInit() {
   }
 
-  onSearch() {
-    // console.log(" onSearch ");
+  onSearch(form: NgForm): void {
+    if (form.value.search) {
+      this.userService.search(form.value.search);
+    } else {
+      this.userService.load();
+    }
   }
 
 }

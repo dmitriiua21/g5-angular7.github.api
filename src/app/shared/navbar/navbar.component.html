@@ -13,9 +13,9 @@
         <a class="nav-link" href="#">Table</a>
       </li>
     </ul>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <input type="button" class="btn btn-outline-info my-2 my-sm-0" (click)="onSearch()" value="Search">
+    <form class="form-inline" (submit)="onSearch(form)" #form="ngForm">
+      <input ngModel class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+      <input type="submit" class="btn btn-outline-info my-2 my-sm-0" value="Search">
     </form>
   </div>
 </nav>
