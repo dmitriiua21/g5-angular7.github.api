@@ -3,7 +3,7 @@ export interface User {
   id: string;
   avatar_url: string;
   url: string;
-  followers_url: string;
+  html_url: string;
   email: string;
-  followers: User[];
+  type: string;
 }
