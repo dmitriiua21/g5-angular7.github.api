@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { UserService } from './../core/services/user.service';
+import { User } from '../core/models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,7 @@ import { UserService } from './../core/services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  users$: any;
+  users$: Observable<User[]>;
 
   constructor(
     private readonly userService: UserService

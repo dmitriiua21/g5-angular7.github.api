@@ -26,6 +26,11 @@ export class UserService {
       .subscribe(data => this.populateUsers(data));
   }
 
+  search(query: string): void {
+    this.apiService.get(`search/users?q=${query}&per_page=20`).pipe(takeUntil(this.destroy$))
+      .subscribe(data => this.populateUsers(data.items))
+}
+
   populateUsers(users): void {
     this.userSubject.next(users);
   }
