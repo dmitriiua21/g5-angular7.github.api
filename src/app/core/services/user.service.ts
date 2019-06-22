@@ -13,12 +13,23 @@ export class UserService {
   private destroy$: Subject<any> = new Subject();
   private userSubject: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
 
+  private selectedUserSubject: BehaviorSubject<User> = new BehaviorSubject<User>({} as User);
+  // public _selectedUser: Observable<User> = this.selectedUserSubject.asObservable();
+
   constructor(
     private readonly apiService: ApiService
   ) { }
 
   get users$(): Observable<User[]> {
     return this.userSubject.pipe(map(data => data));
+  }
+
+  get user$(): Observable<User> {
+    return this.selectedUserSubject.pipe(map(data => data ));
+  }
+
+  selectUser(user: User) {
+    this.selectedUserSubject.next(user);
   }
 
   load(): void {

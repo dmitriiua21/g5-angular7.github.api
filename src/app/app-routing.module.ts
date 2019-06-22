@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
   { path: 'table', loadChildren: './pages/table/table.module#TableModule' },
+  { path: 'detail', loadChildren: './pages/detail/detail.module#DetailModule' },
 ];
 
 @NgModule({

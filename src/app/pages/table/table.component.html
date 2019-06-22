@@ -2,7 +2,6 @@
   <div class="row">
     <div class="table-responsive-sm col-12">
       <table class="table" *ngIf="(users$ | async) as users">
-        <caption>List of users</caption>
         <thead>
           <tr>
             <th scope="col">Avatar</th>
@@ -14,9 +13,9 @@
         <tbody>
           <tr *ngFor="let user of users">
             <td>
-              <a [href]="user.html_url" target="_blank">
+              <div (click)="showDetail(user)">
                 <img [src]="user.avatar_url" class="img-thumbnail img-avatar">
-              </a>
+              </div>
             </td>
             <td>{{ user.login }}</td>
             <td>{{ user.type }}</td>
