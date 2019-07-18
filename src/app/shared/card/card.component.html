@@ -1,7 +1,7 @@
 <div class="card">
-  <img class="card-img-top" [src]="user.avatar_url" (click)="showDetail()">
+  <img class="card-img-top" [src]="user?.avatar_url" (click)="showDetail()">
   <div class="card-body">
-    <h5 class="card-title">{{ user.login }}</h5>
+    <h5 class="card-title">{{ user?.login }}</h5>
   </div>
   <div class="card-footer">
     <button (click)="showDetail()" class="btn btn-primary btn-block" role="button">More info</button>

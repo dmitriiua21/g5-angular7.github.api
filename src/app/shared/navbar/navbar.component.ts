@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router, Event, NavigationStart, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
 
-import { UserService } from './../../core/services/user.service';
+import { UserService } from 'src/app/core';
 
 @Component({
   selector: 'app-navbar',

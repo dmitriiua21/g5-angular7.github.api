@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from 'src/app/core/services/user.service';
-import { User } from 'src/app/core/models/user.model';
-import { Observable, Subject } from 'rxjs';
+import { UserService, User } from 'src/app/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-detail',
