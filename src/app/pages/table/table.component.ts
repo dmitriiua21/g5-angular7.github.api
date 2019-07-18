@@ -23,7 +23,7 @@ export class TableComponent implements OnInit {
     this.users$ = this.userService.users$;
   }
 
-  showDetail(user) {
+  showDetail(user: User) {
     this.userService.selectUser(user);
     this.router.navigateByUrl('/detail');
   }

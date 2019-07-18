@@ -22,7 +22,7 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.userService.selectUser({} as User)
+    this.userService.selectUser({} as User);
   }
 
 }

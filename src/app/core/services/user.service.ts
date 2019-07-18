@@ -14,7 +14,7 @@ export class UserService {
   private userSubject: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
 
   private selectedUserSubject: BehaviorSubject<User> = new BehaviorSubject<User>({} as User);
-  // public _selectedUser: Observable<User> = this.selectedUserSubject.asObservable();
+  private _selectedUser: Observable<User> = this.selectedUserSubject.asObservable();
 
   constructor(
     private readonly apiService: ApiService
@@ -25,7 +25,7 @@ export class UserService {
   }
 
   get user$(): Observable<User> {
-    return this.selectedUserSubject.pipe(map(data => data ));
+    return this._selectedUser.pipe(map(data => data ));
   }
 
   selectUser(user: User) {
