@@ -34,15 +34,15 @@ export class UserService {
 
   load(): void {
     this.apiService.get('users').pipe(takeUntil(this.destroy$))
-      .subscribe(data => this.populateUsers(data));
+      .subscribe(data => this._populate(data));
   }
 
   search(query: string): void {
     this.apiService.get(`search/users?q=${query}&per_page=20`).pipe(takeUntil(this.destroy$))
-      .subscribe(data => this.populateUsers(data.items))
-}
+      .subscribe(data => this._populate(data.items));
+  }
 
-  populateUsers(users): void {
+  _populate(users): void {
     this.userSubject.next(users);
   }
 
